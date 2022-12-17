@@ -1,0 +1,19 @@
+.nav {
+  background: #00bbbb;
+  position: fixed;
+  width: 200px;
+  height: 100vh;
+}
+
+.profile {
+  height: 30vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.item {
+  border: 2px dashed lightblue;
+}/*# sourceMappingURL=Nav.css.map */
