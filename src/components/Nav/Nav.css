@@ -84,8 +84,8 @@
 }
 
 .nav-list:hover > .img {
-  -webkit-animation: tilt-img 0.2s 4;
-          animation: tilt-img 0.2s 4;
+  -webkit-animation: tilt-img 0.2s 3;
+          animation: tilt-img 0.2s 3;
 }
 
 @-webkit-keyframes tilt-img {
@@ -104,4 +104,16 @@
   to {
     transform: rotate(5deg);
   }
+}
+.navDetail {
+  display: grid;
+  grid-template-columns: 0.2fr 0.2fr 1fr;
+  cursor: pointer;
+  padding: 5px;
+  padding-left: 50px;
+  margin-top: 10px;
+  color: #545c9e;
+}
+.navDetail:hover {
+  color: #9cd4b0;
 }/*# sourceMappingURL=Nav.css.map */

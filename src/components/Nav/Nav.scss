@@ -76,7 +76,7 @@
 
 .nav-list:hover > .img {
     // transform:rotate(-20deg);
-    animation: tilt-img 0.2s 4;
+    animation: tilt-img 0.2s 3;
 }
 @keyframes tilt-img {
     from{
@@ -84,3 +84,20 @@
     };
     to{transform:rotate(5deg)};
 }
+
+
+
+.navDetail {
+    display:grid;
+    grid-template-columns: 0.2fr 0.2fr 1fr;
+    cursor:pointer;
+    padding:5px;
+    padding-left: 50px;
+    margin-top: 10px;
+    color:rgba($color: #545c9e, $alpha: 1.0);
+    // display:none;
+    &:hover{
+        color:rgba($color: #9cd4b0, $alpha: 1.0);
+    }
+}
+
