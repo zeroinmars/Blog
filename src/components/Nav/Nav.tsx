@@ -49,15 +49,15 @@ declare module 'react' {
 
 
 const NavList = ({img, title, detail}:NavProps) => {
-  // const navList:any = document.getElementById(title);
-  // navList!.style.display = "none";
   const handleListDetail = (e:any) => {
-    // if(navList.style.display == "block") {
-    //   navList.style.display = "none";
-    // } else {
-    //   navList.style.display = "block";
-    // }
+    const navList:any = document.getElementById(title);
+    if(navList.style.display == "block") {
+      navList.style.display = "none";
+    } else {
+      navList.style.display = "block";
+    }
   }
+  
   return(
     <div style={{margin:"5px 0px"}}>
       <div className="nav-list" name={title} onClick={handleListDetail}>
@@ -75,7 +75,7 @@ const NavList = ({img, title, detail}:NavProps) => {
 const NavDetail = ({detail, title}:any) => {
   const nav = useNavigate();
   return(
-    <div id={title}>
+    <div id={title} style={{display:"none"}}>
       {detail.map((data:any, index:number)=>(
         <div key={index} className="navDetail" onClick={()=>{nav('/'+data.name)}}>
           <img src="./img/arrow-right2.png" alt="" width="7px" height="7px" style={{marginTop:"7px"}}/>
