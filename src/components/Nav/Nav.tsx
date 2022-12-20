@@ -1,5 +1,6 @@
 import React from 'react';
 import './Nav.css';
+import { useNavigate } from 'react-router-dom';
 
 //Nav 리스트 
 const list= [
@@ -9,19 +10,24 @@ const list= [
 ]
 
 const Nav = () => {
+  const nav = useNavigate();
   return (
-    <div className='nav'>
-        <div className="profile">
-          <img className="profile-image" src="./img/profile.png" width="150px" height="160px" alt="img" />
-          <div style={{height:"180px"}}></div>
-          <div style={{textAlign:"center", cursor:"pointer"}}> <img src="./img/app-development.png" width="25px" height="25px" alt="" /> <span style={{fontSize:"20px"}}>ZeroInMars</span></div>
-        </div>
-        <div className='container'>
-          {list.map(
-              (data,index)=> <NavList key={index} img={data.img} title={data.title} detail={data.detail}/>
-          )}
-        </div>
+    <div>
+      <div className='nav'>
+          <div className="profile">
+            <img className="profile-image" src="./img/profile.png" width="150px" height="160px" alt="img" />
+            <div style={{height:"180px"}}></div>
+            <div onClick={()=>{nav('/')}} style={{textAlign:"center", cursor:"pointer"}}> <img src="./img/app-development.png" width="25px" height="25px" alt="" /> <span style={{fontSize:"20px"}}>ZeroInMars</span></div>
+          </div>
+          <div className='container'>
+            {list.map(
+                (data,index)=> <NavList key={index} img={data.img} title={data.title} detail={data.detail}/>
+            )}
+          </div>
+      </div>
+      <div style={{width:"210px", height:"100vh"}}/>
     </div>
+
   )
 }
 
@@ -43,14 +49,14 @@ declare module 'react' {
 
 
 const NavList = ({img, title, detail}:NavProps) => {
-  const navList:any = document.getElementById(title);
-  navList!.style.display = "none";
+  // const navList:any = document.getElementById(title);
+  // navList!.style.display = "none";
   const handleListDetail = (e:any) => {
-    if(navList.style.display == "block") {
-      navList.style.display = "none";
-    } else {
-      navList.style.display = "block";
-    }
+    // if(navList.style.display == "block") {
+    //   navList.style.display = "none";
+    // } else {
+    //   navList.style.display = "block";
+    // }
   }
   return(
     <div style={{margin:"5px 0px"}}>
@@ -67,10 +73,11 @@ const NavList = ({img, title, detail}:NavProps) => {
 }
 
 const NavDetail = ({detail, title}:any) => {
+  const nav = useNavigate();
   return(
     <div id={title}>
       {detail.map((data:any, index:number)=>(
-        <div key={index} className="navDetail">
+        <div key={index} className="navDetail" onClick={()=>{nav('/'+data.name)}}>
           <img src="./img/arrow-right2.png" alt="" width="7px" height="7px" style={{marginTop:"7px"}}/>
           <img src={"./img/"+data.name+".png"} width="20px" height="20px" alt="" style={{marginTop:"2px"}}/>
           <span style={{marginLeft:"10px"}}>{data.name}</span> 

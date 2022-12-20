@@ -1,5 +1,6 @@
 .nav {
   border: 0.05px solid black;
+  background: white;
   position: fixed;
   width: 200px;
   height: 100vh;
@@ -116,4 +117,8 @@
 }
 .navDetail:hover {
   color: #9cd4b0;
+}
+
+.navDetail > * {
+  pointer-events: none;
 }/*# sourceMappingURL=Nav.css.map */

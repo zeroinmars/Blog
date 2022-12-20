@@ -1,0 +1,14 @@
+.main-gif {
+  margin-top: -200px;
+  position: absolute;
+  z-index: -1;
+  border-radius: 0% 0% 50% 70%;
+}
+
+.main-gif-font {
+  padding: 250px 300px;
+  color: white;
+  text-shadow: 2px 2px black;
+  font-size: 80px;
+  font-family: "Hi Melody", cursive;
+}/*# sourceMappingURL=Main.css.map */

@@ -1,6 +1,7 @@
 
 .nav { 
     border: 0.05px solid black;
+    background: white;
     position: fixed;
     width:200px;
     height:100vh;
@@ -95,9 +96,11 @@
     padding-left: 50px;
     margin-top: 10px;
     color:rgba($color: #545c9e, $alpha: 1.0);
-    // display:none;
     &:hover{
         color:rgba($color: #9cd4b0, $alpha: 1.0);
     }
 }
 
+.navDetail > * {
+    pointer-events: none;
+}
