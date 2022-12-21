@@ -1,6 +1,37 @@
 import React from 'react';
 import './Nav.css';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+
+const NavCSS = styled.div`
+    border: 0.05px solid black;
+    background: white;
+    position: fixed;
+    width:200px;
+    height:100vh;
+    overflow: scroll;
+    &::-webkit-scrollbar{
+      display: none;
+    }
+    z-index: 1;
+    box-shadow: 5px 5px rgba($color: #000000, $alpha: 0.1);
+    padding: 5px;
+    left: 00px;
+`
+
+const ProfileImg = styled.img`
+  left: 20px;
+  top: 20px;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  border: 2px dashed lightblue;
+  border-radius: 40px;
+  &:hover {
+      box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.2);
+  }
+`
+
 
 //Nav 리스트 
 const list= [
@@ -9,24 +40,19 @@ const list= [
   {img:"icons8-unreal-engine-64", title:"언리얼엔진", detail:[{name:"뉴스/기사", img:""}, {name:"블루프린트", img:""}, {name:"디지털트윈", img:""},{name:"", img:""}]},
 ]
 
+
+
 const Nav = () => {
   const nav = useNavigate();
   return (
-    <div>
-      <div className='nav'>
-          <div className="profile">
-            <img className="profile-image" src="./img/profile.png" width="150px" height="160px" alt="img" />
-            <div style={{height:"180px"}}></div>
-            <div onClick={()=>{nav('/')}} style={{textAlign:"center", cursor:"pointer"}}> <img src="./img/app-development.png" width="25px" height="25px" alt="" /> <span style={{fontSize:"20px"}}>ZeroInMars</span></div>
-          </div>
-          <div className='container'>
-            {list.map(
-                (data,index)=> <NavList key={index} img={data.img} title={data.title} detail={data.detail}/>
-            )}
-          </div>
-      </div>
-      <div style={{width:"210px", height:"100vh"}}/>
-    </div>
+    <NavCSS>
+      <ProfileImg className="profile-image" src="./img/profile.png" alt="img" />
+      <div style={{height:"180px"}}></div>
+      <div onClick={()=>{nav('/')}} style={{textAlign:"center", cursor:"pointer", marginBottom:"20px"}}> <img src="./img/app-development.png" width="25px" height="25px" alt="" /> <span style={{fontSize:"20px"}}>ZeroInMars</span></div>
+        {list.map(
+            (data,index)=> <NavList key={index} img={data.img} title={data.title} detail={data.detail}/>
+        )}
+    </NavCSS>
 
   )
 }
@@ -59,7 +85,7 @@ const NavList = ({img, title, detail}:NavProps) => {
   }
   
   return(
-    <div style={{margin:"5px 0px"}}>
+    <div style={{margin:"5px 0px", overflow:"hidden"}}>
       <div className="nav-list" name={title} onClick={handleListDetail}>
         <img className='img' src={"./img/"+img+".png"} width="25px" height="25px" alt="" />
         <span>{title}</span>

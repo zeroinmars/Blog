@@ -47,24 +47,9 @@
   width: 70px;
   position: relative;
   left: 200px;
-  opacity: 0%;
+  /* opacity: 0%; */
   background-color: rgba(0, 200, 200, 0.8);
-  -webkit-animation: bottom-move 0.5s 1;
-          animation: bottom-move 0.5s 1;
-}
-
-@-webkit-keyframes bottom-move {
-  0% {
-    left: -80px;
-    opacity: 100%;
-  }
-  25% {
-    opacity: 100%;
-  }
-  100% {
-    left: 200px;
-    opacity: 0%;
-  }
+  animation: bottom-move 0.8s 1 forwards;
 }
 
 @keyframes bottom-move {
@@ -72,14 +57,12 @@
     left: -80px;
     opacity: 100%;
   }
-  25% {
-    opacity: 100%;
-  }
   100% {
     left: 200px;
     opacity: 0%;
   }
 }
+
 .img {
   margin-left: 20px;
 }
@@ -87,15 +70,6 @@
 .nav-list:hover > .img {
   -webkit-animation: tilt-img 0.2s 3;
           animation: tilt-img 0.2s 3;
-}
-
-@-webkit-keyframes tilt-img {
-  from {
-    transform: rotate(-5deg);
-  }
-  to {
-    transform: rotate(5deg);
-  }
 }
 
 @keyframes tilt-img {

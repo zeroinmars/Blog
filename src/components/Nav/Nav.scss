@@ -1,19 +1,19 @@
 
-.nav { 
-    border: 0.05px solid black;
-    background: white;
-    position: fixed;
-    width:200px;
-    height:100vh;
-    z-index: 1;
-    box-shadow: 5px 5px rgba($color: #000000, $alpha: 0.1);
-    padding: 5px;
-}
+// .nav { 
+//     border: 0.05px solid black;
+//     background: white;
+//     position: fixed;
+//     width:200px;
+//     height:100vh;
+//     z-index: 1;
+//     box-shadow: 5px 5px rgba($color: #000000, $alpha: 0.1);
+//     padding: 5px;
+// }
 
-.profile {
-    height:30vh;
-    margin:20px;
-}
+// .profile {
+//     height:30vh;
+//     margin:20px;
+// }
 
 .profile-image{
     position: absolute;
@@ -51,7 +51,9 @@
     left:200px;
     opacity: 0%;
     background-color: rgba(0, 200, 200, 0.8); 
+    overflow:hidden;
     animation: bottom-move 0.5s 1;
+
 }
 
 @keyframes bottom-move {
