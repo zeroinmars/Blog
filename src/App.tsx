@@ -27,18 +27,18 @@ function App() {
   //   setOpen(!open);
   // })
   const [open, setOpen] = useState(false);
-  const handleModal:any = ()=>{
-    setOpen(!open);
-  }
+  // const handleModal:any = ()=>{
+  //   setOpen(!open);
+  // }
 
   return (
     <BrowserRouter>
       <Nav/>
       {/* <Header/> */}
-      <div style={{display:"grid", gridTemplateColumns:"220px 40px"}}>
+      <div style={{display:"grid", gridTemplateColumns:"220px 90%"}}>
         <div/>
         <Modal flag={open}></Modal>
-        <button onClick={handleModal}>버튼</button>
+        {/* <button onClick={handleModal}>버튼</button> */}
         <Routes>
           <Route path='/' element={<Main/>}/>
           <Route path='/python' element={<Python/>}/>
