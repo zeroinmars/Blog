@@ -2,6 +2,7 @@ import React from 'react';
 import './Nav.css';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 
 const NavCSS = styled.div`
     border: 0.05px solid black;
@@ -34,23 +35,24 @@ const ProfileImg = styled.img`
 
 
 //Nav 리스트 
-const list= [
-  {img:"web-programming", title:"languages", detail:[{name:"python", img:"python"}, {name:"javascript", img:"javascript"}, {name:"typescript", img:"typescript"},{name:"react", img:"react"},{name:"solidity", img:"solidity"}]},
-  {img:"nft", title:"블록체인", detail:[{name:"뉴스", img:""}, {name:"합의 알고리즘", img:""}, {name:"암호학", img:""},{name:"회사", img:""}]},
-  {img:"icons8-unreal-engine-64", title:"언리얼엔진", detail:[{name:"뉴스/기사", img:""}, {name:"블루프린트", img:""}, {name:"디지털트윈", img:""},{name:"", img:""}]},
-]
+// const navList= [
+//   {img:"web-programming", title:"languages", detail:[{name:"python", img:"python"}, {name:"javascript", img:"javascript"}, {name:"typescript", img:"typescript"},{name:"react", img:"react"},{name:"solidity", img:"solidity"}]},
+//   {img:"nft", title:"블록체인", detail:[{name:"뉴스", img:""}, {name:"합의 알고리즘", img:""}, {name:"암호학", img:""},{name:"회사", img:""}]},
+//   {img:"icons8-unreal-engine-64", title:"언리얼엔진", detail:[{name:"뉴스/기사", img:""}, {name:"블루프린트", img:""}, {name:"디지털트윈", img:""},{name:"", img:""}]},
+// ]
 
 
 
 const Nav = () => {
   const nav = useNavigate();
+  const navList = useSelector(({navList})=>navList);
   return (
     <NavCSS>
-      <ProfileImg className="profile-image" src="./img/profile.png" alt="img" />
-      <div style={{height:"180px"}}></div>
-      <div onClick={()=>{nav('/')}} style={{textAlign:"center", cursor:"pointer", marginBottom:"20px"}}> <img src="./img/app-development.png" width="25px" height="25px" alt="" /> <span style={{fontSize:"20px"}}>ZeroInMars</span></div>
-        {list.map(
-            (data,index)=> <NavList key={index} img={data.img} title={data.title} detail={data.detail}/>
+      <ProfileImg className="profile-image" src="./img/navList/profile.png" alt="img" />
+      <div style={{height:"180px"}}></div> {/* ProfileImg position이 absolute라 ProfileImg 높이값 대신 확보 용도*/}
+      <div onClick={()=>{nav('/')}} style={{textAlign:"center", cursor:"pointer", marginBottom:"20px"}}> <img src="./img/navList/app-development.png" width="25px" height="25px" alt="" /> <span style={{fontSize:"20px"}}>ZeroInMars</span></div>
+        {navList.map(
+            (data,index)=> <NavList key={index} img={data.icon} title={data.title} detail={data.detail}/>
         )}
     </NavCSS>
 
@@ -87,7 +89,7 @@ const NavList = ({img, title, detail}:NavProps) => {
   return(
     <div style={{margin:"5px 0px", overflow:"hidden"}}>
       <div className="nav-list" name={title} onClick={handleListDetail}>
-        <img className='img' src={"./img/"+img+".png"} width="25px" height="25px" alt="" />
+        <img className='img' src={img} width="25px" height="25px" alt="" />
         <span>{title}</span>
         <img style={{marginLeft:"20px", marginTop:"5px"}} src="./img/arrow-right.png" width="15px" height="15px" alt="" />
         {/* <img style={{marginLeft:"20px"}} src="./img/arrow-right.png" width="25px" height="25px" alt="" /> */}
@@ -104,9 +106,9 @@ const NavDetail = ({detail, title}:any) => {
     <div id={title} style={{display:"none"}}>
       {detail.map((data:any, index:number)=>(
         <div key={index} className="navDetail" onClick={()=>{nav('/'+data.name)}}>
-          <img src="./img/arrow-right2.png" alt="" width="7px" height="7px" style={{marginTop:"7px"}}/>
-          <img src={"./img/"+data.name+".png"} width="20px" height="20px" alt="" style={{marginTop:"2px"}}/>
-          <span style={{marginLeft:"10px"}}>{data.name}</span> 
+          <img src="./img/navList/arrow-right2.png" alt="" width="7px" height="7px" style={{marginTop:"7px"}}/>
+          <img src={data.icon} width="20px" height="20px" alt="" style={{marginTop:"2px"}}/>
+          <span style={{marginLeft:"10px"}}>{data.name} <span style={{color:"#cc1410"}}>{data.boards.length?"("+data.boards.length+")":""}</span> </span>
         </div>
       ))}
     </div>

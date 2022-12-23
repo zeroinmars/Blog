@@ -1,18 +1,19 @@
+// import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-const Boards = styled.div`
+export const Boards = styled.div`
   margin-top: 300px;
   margin-left: 150px;
   display:grid;
-  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
-  row-gap: 80px;
+  grid-template-columns: 0.4fr 0.4fr 0.4fr;
+  row-gap: 40px;
 `
 const Board = styled.div`
   cursor: pointer;
   overflow: hidden;
   text-align: center;
-  height:350px;
-  width: 250px;
+  height:450px;
+  width: 350px;
   border-radius: 10%;
   /* background-color: aquamarine; */
   box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
@@ -34,20 +35,25 @@ const Board = styled.div`
 
 type BoardType = {
   image: string,
-  title: string
+  title: string,
+  content: string
 }
 
-const BoardCompo = ({image, title}: BoardType) =>{
+const BoardCompo = ({image, title, content}: BoardType) =>{
+  const handleCheckRedux = () =>{
+  }
+
   return(
-    <Boards>
-      <Board>
-        <img src={image} width="100%" height="40%" alt="" />
-        <span style={{fontSize:"30px", fontFamily: "Hi Melody cursive;"}}>{title}</span><br/>
-        <span>내용</span>
-      </Board>
-    </Boards>
+    <Board>
+      <img src={image} width="100%" height="40%" alt="" />
+      <div style={{marginTop:"10px",fontSize:"20px",fontFamily: "Hi Melody cursive"}}>
+        <span>{title}</span>
+      </div>
+      <div style={{padding:"10px 30px", fontSize:"15px", height:"110px", overflow:"hidden"}}>
+        <span>{content}</span>
+      </div>
+    </Board>
   );
 }
-
 
 export default BoardCompo;

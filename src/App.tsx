@@ -6,7 +6,7 @@ import Javascript from './pages/Javascript';
 import ReactPage from './pages/React';
 import Solidity from './pages/Solidity';
 import Nav from './components/Nav/Nav';
-import Header from './components/Header';
+// import Header from './components/Header';
 import styled from 'styled-components';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 

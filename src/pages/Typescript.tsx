@@ -1,14 +1,20 @@
-import Board from '../components/Board';
-
+import Board, {Boards} from '../components/Board';
+import { useSelector } from 'react-redux';
 
 const Typescript = () => {
+  const typescriptInfo = useSelector(state=>state.navList[0]);
   return (
     <div>
       <div style={{height:"500px", width:"100%", background:"url(https://res.cloudinary.com/practicaldev/image/fetch/s---rROvro4--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/y8duykf5peuazf5rghqr.png) fixed"}}>
       </div>
-      <Board image="./img/generic-img.png" title="제네릭"/>
+      <Boards>
+        {typescriptInfo.detail[2].boards.map(
+          (data,index)=><Board key={index} image={data.img} title={data.title} content={data.content}/>
+        )}
+      </Boards>
     </div>
   )
 }
 
 export default Typescript
+
