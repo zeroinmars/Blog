@@ -15,6 +15,11 @@
 //     margin:20px;
 // }
 
+.example::-webkit-scrollbar {
+    display: none;
+  }
+  
+
 .profile-image{
     position: absolute;
     border: 2px dashed lightblue;

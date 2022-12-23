@@ -8,7 +8,7 @@ const NavCSS = styled.div`
     background: white;
     position: fixed;
     width:200px;
-    height:100vh;
+    height:100%;
     overflow: scroll;
     &::-webkit-scrollbar{
       display: none;
