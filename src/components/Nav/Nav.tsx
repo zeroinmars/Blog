@@ -3,6 +3,7 @@ import './Nav.css';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
+import { NavListType } from '../../modules/reducer';
 
 const NavCSS = styled.div`
     border: 0.05px solid black;
@@ -45,7 +46,7 @@ const ProfileImg = styled.img`
 
 const Nav = () => {
   const nav = useNavigate();
-  const navList = useSelector(({navList})=>navList);
+  const navList = useSelector(({navList}:NavListType)=>navList);
   return (
     <NavCSS>
       <ProfileImg className="profile-image" src="./img/navList/profile.png" alt="img" />

@@ -4,7 +4,7 @@ import { configureStore } from '@reduxjs/toolkit';
 declare module 'react-redux' {
     interface DefaultRootState extends NavListType{}
   }
-type NavListType = {
+export type NavListType = {
     navList:[{
         title:string,
         icon:string,

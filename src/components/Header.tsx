@@ -9,8 +9,7 @@ const HeaderCSS = styled.div`
 
 const Header = () => {
   return (
-    <HeaderCSS>
-        
+    <HeaderCSS>  
     </HeaderCSS>
   )
 }
