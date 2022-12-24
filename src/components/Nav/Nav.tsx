@@ -46,7 +46,7 @@ const ProfileImg = styled.img`
 
 const Nav = () => {
   const nav = useNavigate();
-  const navList = useSelector(({navList}:NavListType)=>navList);
+  const navList = useSelector((state:NavListType)=>state.navList);
   return (
     <NavCSS>
       <ProfileImg className="profile-image" src="./img/navList/profile.png" alt="img" />
