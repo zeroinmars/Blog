@@ -1,9 +1,10 @@
 // import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 export const Boards = styled.div`
   margin-top: 300px;
-  margin-left: 150px;
+  margin-left: 300px;
   display:grid;
   grid-template-columns: 0.4fr 0.4fr 0.4fr;
   row-gap: 40px;
@@ -36,15 +37,15 @@ const Board = styled.div`
 type BoardType = {
   image: string,
   title: string,
-  content: string
+  content: string,
+  path: string,
 }
 
-const BoardCompo = ({image, title, content}: BoardType) =>{
-  const handleCheckRedux = () =>{
-  }
+const BoardCompo = ({image, title, content, path}: BoardType) =>{
+  const nav = useNavigate();
 
   return(
-    <Board>
+    <Board onClick={()=>{nav(path)}}>
       <img src={image} width="100%" height="40%" alt="" />
       <div style={{marginTop:"10px",fontSize:"20px",fontFamily: "Hi Melody cursive"}}>
         <span>{title}</span>

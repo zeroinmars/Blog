@@ -1,14 +1,17 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Main from './pages/Main';
-import Typescript from './pages/Typescript';
-import Python from './pages/Python';
-import Javascript from './pages/Javascript';
-import ReactPage from './pages/React';
-import Solidity from './pages/Solidity';
+import Typescript from './pages/languages/Typescript';
+import Python from './pages/languages/Python';
+import Javascript from './pages/languages/Javascript';
+import ReactPage from './pages/languages/React';
+import Solidity from './pages/languages/Solidity';
 import Nav from './components/Nav/Nav';
 // import Header from './components/Header';
 import styled from 'styled-components';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Generic from './pages/languages/typescript/Generic';
+import CryptoZombies1 from './pages/languages/solidity/crypto-zombies/CryptoZombies1';
+import axios from 'axios';
 
 const Modal = styled.div<{flag:boolean}>`
   position: fixed;
@@ -23,21 +26,23 @@ const Modal = styled.div<{flag:boolean}>`
 `
 
 function App() {
-  // window.addEventListener('click', ()=>{
-  //   setOpen(!open);
-  // })
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   // const handleModal:any = ()=>{
   //   setOpen(!open);
   // }
-
+  const getApi = ()=>{
+    axios.post('http://localhost:5000/test',{name:"seungmin"})
+    .then((result:any)=>{console.log("success to send api", result)})
+    .catch((err:any)=>{console.log(err)})
+  }
   return (
     <BrowserRouter>
       <Nav/>
+      <button onClick={getApi}>ㄷㄱㄷㄱㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴ</button>
       {/* <Header/> */}
       <div style={{display:"grid", gridTemplateColumns:"220px 90%"}}>
         <div/>
-        <Modal flag={open}></Modal>
+        {/* <Modal flag={open}></Modal> */}
         {/* <button onClick={handleModal}>버튼</button> */}
         <Routes>
           <Route path='/' element={<Main/>}/>
@@ -46,6 +51,8 @@ function App() {
           <Route path='/typescript' element={<Typescript/>}/>
           <Route path='/react' element={<ReactPage/>}/>
           <Route path='/solidity' element={<Solidity/>}/>
+          <Route path='/typescript/generic' element={<Generic/>}/>
+          <Route path='/solidity/cryptoZombies' element={<CryptoZombies1/>}/>
         </Routes>
       </div>
     </BrowserRouter>

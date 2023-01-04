@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 const MainGif = styled.div`
   background: url(./img/Animation.gif) fixed;
-  background-image: url(https://res.cloudinary.com/practicaldev/image/fetch/s---rROvro4--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/y8duykf5peuazf5rghqr.png) fixed;
+  /* background-image: url(https://res.cloudinary.com/practicaldev/image/fetch/s---rROvro4--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/y8duykf5peuazf5rghqr.png) fixed; */
   height:600px;
   width:100%;
   position:absolute;
