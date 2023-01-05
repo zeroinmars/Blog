@@ -78,7 +78,7 @@ export type NavListType = {
     ]
 }
 
-const imgPath = "./img/navList/languages/detail/";
+const imgPath = "./img/navList/";
 
 const initialState: any = {
     navList : [{
@@ -86,35 +86,35 @@ const initialState: any = {
         icon:"./img/navList/languages/languages-icon.png",
         detail:[{
             name:"python",
-            icon: imgPath +"python-icon.png",
+            icon: imgPath +"languages/detail/python-icon.png",
             boards:[],
             },
             {name:"javascript",
-            icon: imgPath +"javascript-icon.png",
+            icon: imgPath +"languages/detail/javascript-icon.png",
             boards:[],
             },
             {name:"typescript",
-            icon: imgPath +"typescript-icon.png",
+            icon: imgPath +"languages/detail/typescript-icon.png",
             boards:[
                 {
                 title:"제네릭 선언",
                 path:'./generic',
-                img: imgPath +"typescript/generic-img.png",
+                img: imgPath +"languages/detail/typescript/generic-img.png",
                 },
             ],
             },
             {name:"react",
-            icon: imgPath +"react-icon.png",
+            icon: imgPath +"languages/detail/react-icon.png",
             boards:[
             ],
             },
             {name:"solidity",
-            icon: imgPath +"solidity-icon.png",
+            icon: imgPath +"languages/detail/solidity-icon.png",
             boards:[
                 {
                     title:"크립토 좀비 만들기",
                     path:'./generic',
-                    img: imgPath +"typescript/generic-img.png",
+                    img: imgPath +"languages/detail/typescript/generic-img.png",
                 },
             ],
             },
@@ -124,50 +124,51 @@ const initialState: any = {
         icon:"./img/navList/blockchain/blockchain-icon.png",
         detail:[{
             name:"뉴스/소식",
-            icon:"blockchian-news-icon",
+            icon: imgPath+ "blockchain/detail/news-icon.png",
             boards:[],
             },{
             name:"합의알고리즘",
-            icon:"blockchian-consensusAlgorithm-icon",
+            icon:imgPath+ "blockchain/detail/consensus-icon.png",
             boards:[],
             },{
             name:"NFT",
-            icon:"blockchian-NFT-icon",
+            icon:imgPath+ "blockchain/detail/nft-icon.png",
             boards:[],
             },{
             name:"DAO",
-            icon:"blockchian-DAO-icon",
+            icon:imgPath+ "blockchain/detail/dao-icon.png",
             boards:[],
             },{
             name:"DEFI",
-            icon:"blockchian-DEFI-icon",
+            icon:imgPath+ "blockchain/detail/defi-icon.png",
             boards:[],
             },{
             name:"거래소",
-            icon:"blockchian-exchange-icon",
+            icon:imgPath+ "blockchain/detail/exchange-icon.png",
             boards:[],
             },{
             name:"회사",
-            icon:"blockchian-company-icon",
+            icon:imgPath+ "blockchain/detail/company-icon.png",
             boards:[],
             },
         ],
         },
+        {
+            title:"언리얼엔진",
+            icon:"./img/navList/unrealEngine/unrealEngine-icon.png",
+            detail:[{
+                name:"소식",
+                icon:"unrealEngine-news-icon",
+                boards:[],
+                    },{
+                name:"회사",
+                icon:"unrealEngine--icon",
+                boards:[],
+                    },
+            ]},
     ]
 }
-        // {
-        // title:"언리얼엔진",
-        // icon:"./img/navList/unrealEngine/unrealEngine-icon.png",
-        // detail:[{
-        //     name:"소식",
-        //     icon:"unrealEngine-news-icon",
-        //     boards:[],
-        //         },{
-        //     name:"회사",
-        //     icon:"unrealEngine--icon",
-        //     boards:[],
-        //         },
-        // ]},
+
 
 
 const navSlice = createSlice({

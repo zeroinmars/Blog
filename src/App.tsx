@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Main from './pages/Main';
+import Test from './pages/Test';
 import Typescript from './pages/languages/Typescript';
 import Python from './pages/languages/Python';
 import Javascript from './pages/languages/Javascript';
@@ -46,6 +47,7 @@ function App() {
         {/* <button onClick={handleModal}>버튼</button> */}
         <Routes>
           <Route path='/' element={<Main/>}/>
+          <Route path='/test' element={<Test/>}/>
           <Route path='/python' element={<Python/>}/>
           <Route path='/javascript' element={<Javascript/>}/>
           <Route path='/typescript' element={<Typescript/>}/>
