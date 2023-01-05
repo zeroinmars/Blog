@@ -38,7 +38,7 @@ function App() {
   return (
     <BrowserRouter>
       <Nav/>
-      <button onClick={getApi}>ㄷㄱㄷㄱㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴ</button>
+      {/* <button onClick={getApi}>ㄷㄱㄷㄱㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴㄴ</button> */}
       {/* <Header/> */}
       <div style={{display:"grid", gridTemplateColumns:"220px 90%"}}>
         <div/>
